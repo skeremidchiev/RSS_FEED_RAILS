@@ -1,0 +1,24 @@
+p#notice = notice
+
+p
+  strong Title:
+  = @rss_feed.title
+p
+  strong Source:
+  = @rss_feed.source
+p
+  strong Sourceurl:
+  = @rss_feed.sourceURL
+p
+  strong Link:
+  = @rss_feed.link
+p
+  strong Publishdate:
+  = @rss_feed.publishDate
+p
+  strong Description:
+  = @rss_feed.description
+
+=> link_to 'Edit', edit_rss_feed_path(@rss_feed)
+'|
+=< link_to 'Back', rss_feeds_path

@@ -1,0 +1,27 @@
+= form_for @rss_feed do |f|
+  - if @rss_feed.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@rss_feed.errors.count, "error")} prohibited this rss_feed from being saved:"
+      ul
+        - @rss_feed.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :source
+    = f.text_field :source
+  .field
+    = f.label :sourceURL
+    = f.text_field :sourceURL
+  .field
+    = f.label :link
+    = f.text_field :link
+  .field
+    = f.label :publishDate
+    = f.text_field :publishDate
+  .field
+    = f.label :description
+    = f.text_field :description
+  .actions = f.submit

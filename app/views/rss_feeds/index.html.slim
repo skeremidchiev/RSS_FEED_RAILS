@@ -1,0 +1,31 @@
+h1 Listing rss_feeds
+
+table
+  thead
+    tr
+      th Title
+      th Source
+      th Sourceurl
+      th Link
+      th Publishdate
+      th Description
+      th
+      th
+      th
+
+  tbody
+    - @rss_feeds.each do |rss_feed|
+      tr
+        td = rss_feed.title
+        td = rss_feed.source
+        td = rss_feed.sourceURL
+        td = rss_feed.link
+        td = rss_feed.publishDate
+        td = rss_feed.description
+        td = link_to 'Show', rss_feed
+        td = link_to 'Edit', edit_rss_feed_path(rss_feed)
+        td = link_to 'Destroy', rss_feed, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Rss feed', new_rss_feed_path

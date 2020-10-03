@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  resources :rss, only: [:show]
+  root 'rss_feeds#index'
+  resources :rss_feeds
 end
