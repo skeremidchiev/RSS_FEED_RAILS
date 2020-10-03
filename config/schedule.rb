@@ -19,6 +19,11 @@
 
 # Learn more: http://github.com/javan/whenever
 
+
+set :output, "log/cron_log.log"
+
+# Doesn't work ?? I have no idea why ...
+# No logs, no info, obviously invoked in a different shell ...
 every 1.minute do
-  runner "MyModel.some_method"
+  runner "RssFeed.custom", :output => 'log/cron_log.log'
 end

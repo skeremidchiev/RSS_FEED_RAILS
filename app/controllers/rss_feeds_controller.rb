@@ -4,7 +4,8 @@ class RssFeedsController < ApplicationController
   # GET /rss_feeds
   # GET /rss_feeds.json
   def index
-    @rss_feeds = RssFeed.all
+    RssFeed.custom
+    @rss_feeds = RssFeed.all.order(publishDate: :desc)
   end
 
   # GET /rss_feeds/1
