@@ -1,6 +1,27 @@
 h1 RSS FEED
 
+/ JS dosn't work for some reason ... No idea why
+/ Doesn't like $
+.container
+  .row
+    .col-sm-6
+      .form-group
+        #datetimepicker1.input-group.date
+          input.form-control type="text" /
+          span.input-group-addon
+            span.glyphicon.glyphicon-calendar
+    javascript:
+      $(function () { $('#datetimepicker1').datetimepicker(); });
+
+
+/ No clue how to convert from html to slim
+/ = form_tag root_path, :method => "get" do
+/  = label_tag(:search, "asdasd")
+/  = text_field_tag :search, params[:search]
+/  = submit_tag "Search"
+
+
 .list-group
   - @rss_feeds.each do |rss_feed|
     a.list-group-item.list-group-item-action href=rss_feed.link target="_blank" = rss_feed.title
-    a.list-group-item.list-group-item-action = rss_feed.publishDate
+    / a.list-group-item.list-group-item-action = rss_feed.publishDate

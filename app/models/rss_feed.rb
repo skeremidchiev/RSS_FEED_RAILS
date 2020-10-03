@@ -1,4 +1,5 @@
 class RssFeed < ApplicationRecord
+  validates :title, presence: true
 
   def self.custom
     # validate and get cookies
@@ -32,4 +33,13 @@ class RssFeed < ApplicationRecord
       end
     end
   end
+
+  def self.search(search)
+    if search
+      title_type = self.where(title: search)
+    else
+      @rss_feeds = RssFeed.all
+    end
+  end
+
 end

@@ -4,7 +4,9 @@ class RssFeedsController < ApplicationController
   # GET /rss_feeds
   # GET /rss_feeds.json
   def index
+    # Background jobs dosnt work so updating it in index
     RssFeed.custom
+    # @rss_feeds = RssFeed.all.search(params[:search]).order(publishDate: :desc)
     @rss_feeds = RssFeed.all.order(publishDate: :desc)
   end
 
